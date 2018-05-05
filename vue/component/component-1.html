@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="component" class="container" >
+	<simple-counter></simple-counter>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var data = { counter: 0 }
+Vue.component(
+
+    'simple-counter', {
+        template : '<button v-on:click="counter +=1">{{counter}}</button>',
+        data : function(){
+             return {
+                counter: 0
+            }
+        }
+})
+
+new Vue({
+
+    el : '#component',
+
+})
+</script>
+
+</body>
+</html>

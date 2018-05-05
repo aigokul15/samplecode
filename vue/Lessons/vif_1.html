@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="vif">
+<div>
+	<template v-if="loginType === 'username'">
+		<label>Username</label>
+		<input placeholder="Enter Your Username" key="username-input" >
+	</template>
+	<template v-else>
+		<label>Email Address </label>
+		<input placeholder="Enter Your Email Address" key="email-input" >
+	</template>
+</div>
+
+<button v-on:click="toggleLogin()">Toggle Login Type</button> 
+<pre>{{ $data | json }}<pre>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vif = new Vue({
+
+	el : "#vif",
+
+	data : {
+		loginType : "username"
+	},
+	methods : {
+		toggleLogin : function(){
+			this.loginType = "emailaddress";
+		}
+	}
+})
+
+</script>
+</body>
+</html>

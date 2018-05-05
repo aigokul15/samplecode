@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="veg1">
+ <button v-on:click="counter += 1">Add 1</button>
+ <p>The above button has been clicked {{ counter }} times </p>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var veg1 = new Vue({
+
+	el : "#veg1",
+
+
+	data : {
+			counter : 0
+		}
+	
+})
+
+</script>
+</body>
+</html>

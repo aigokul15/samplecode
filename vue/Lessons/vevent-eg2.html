@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="veg2">
+ <button v-on:click="greet">Greet</button>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var veg2 = new Vue({
+
+	el : "#veg2",
+
+
+	data : {
+			name : "vue.js"
+		},
+
+	methods : {
+		greet : function(event){
+			alert( 'Hello ' + this.name );
+			if(event){
+				alert(event.target.tagName);
+			}
+		}
+	}
+	
+})
+
+</script>
+</body>
+</html>

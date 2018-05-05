@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+<div class="container-fluid">
+
+	<div class="navbar-header" id="vmenu" class="container" >
+
+		<ul class="nav navbar-nav">
+			<li v-for="(i, index) in menu" v-bind:class="{active :  index === 0 }" > 
+				<a  href="#">{{i}}</a>
+			</li>
+		</ul>
+
+	</div> 
+
+</div>
+</nav>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vmenu = new Vue({
+
+	el : "#vmenu",
+
+
+	data : {
+			menu : [ "Home", "History", "India"],
+		}
+	
+})
+
+</script>
+</body>
+</html>

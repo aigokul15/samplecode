@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+	
+	
+<div id="vclass" class="static" v-bind:class="{ active : isActive, 'text-danger' : hasError }" >
+
+	<div v-bind:class="classObject" >
+	</div>
+
+	<div v-bind:class="classObjectComputed" >
+	</div>
+</div> 
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vclass = new Vue({
+
+	el : "#vclass",
+
+
+	data : {
+			isActive : true,
+			hasError : false,
+			classObject : {
+				active: true,
+  				'text-danger': true
+			},
+			 error: null
+		},
+	
+	computed : {
+
+		classObjectComputed : function(){
+			return {
+				active: this.isActive && !this.error,
+				'text-danger': this.error && this.error.type === 'fatel', 
+			}
+		}
+	}
+	
+
+	
+})
+
+</script>
+</body>
+</html>

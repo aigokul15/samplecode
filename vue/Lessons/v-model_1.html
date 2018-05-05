@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="vmodel" class="container" >
+
+<br><br>
+
+<select v-model="multiSelect" multiple='true'>
+  <option>AA</option>
+  <option>BB</option>
+  <option>CC</option>
+</select>
+<br>
+<span>Selected: {{ multiSelect }}</span>
+
+<br><br>
+
+<select id="vmodel1" v-model="vforSelect">
+<option disabled value="">Please select one</option>
+<option v-for="o in opts" v-bind:value="o.value" >
+	{{o.text }}
+</option>
+
+</select>
+
+<span>Selected : {{ vforSelect }} </span>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vmodel = new Vue({
+
+	el : "#vmodel",
+
+
+	data : {
+			multiSelect : '',
+			vforSelect : '',
+			opts : [
+				{ text : "one", value : 'A' },
+				{ text : "two", value : 'B' },
+				{ text : "three", value : 'C' }
+			]
+		}
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="vfor">
+	<ul id="repeat-object" class="demo">
+		<li v-for="value in object">
+			{{ value }}
+		</li>
+	</ul>
+
+	<div v-for="(value, key) in object">
+  		{{ key }} : {{ value }}
+	</div>
+
+<div v-for="(value, key, index) in object">
+  {{ index }}. {{ key }} : {{ value }}
+</div>
+
+<pre>
+		{{ $data | json }}
+</pre>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vfor = new Vue({
+
+	el : "#vfor",
+
+
+	data : {
+			object : {
+				firstName : 'Gokul',
+				lastname : 'Raj',
+				age : 35
+			},
+			items: [
+				{ message: 'Foo' },
+				{ message: 'Bar' }
+			]
+		}
+	
+})
+
+</script>
+</body>
+</html>

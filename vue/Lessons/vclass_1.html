@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+	
+	
+<div id="vclass" class="static" v-bind:class="[isActive ? activeClass : '' , errorClass]" >
+
+</div> 
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vclass = new Vue({
+
+	el : "#vclass",
+
+
+	data : {
+			activeClass : 'active',
+			errorClass : 'text-danger',
+			isActive : false
+		}
+	
+})
+
+</script>
+</body>
+</html>

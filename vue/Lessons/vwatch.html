@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+
+<div id="vcomputed" class="container" >
+	<p> Full Name  : {{ fullName }} </p>
+</div> 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vcomputed = new Vue({
+
+	el : "#vcomputed",
+
+
+	data : {
+		firstName : "Gokul",
+		lastName : "Raj",
+		fullName : "Gokul Raj"
+	},
+	watch :{
+		firstName : function(val){
+			this.fullName = val + ' ' + this.lastName;
+		},
+		lastName : function(val){
+			this.fullName = this.firstName + ' ' + val;
+		}
+	},
+
+	computed : {
+		fullName : function(){
+			return this.firstName + ' ' + this.lastName ;
+		}
+	}
+	
+})
+
+</script>
+</body>
+</html>

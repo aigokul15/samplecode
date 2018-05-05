@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="veg2">
+ <button v-on:click="say('hi')">Say Hi</button>
+ <button v-on:click="say('What')">Say What</button>
+
+ <br>
+ <button v-on:click="warn('Form cannot be submmited yet', $event)">Submit</button>
+
+ <br>
+
+ <p> Other Events Examples</p>
+
+<input v-on:keyup.13="submit">
+
+<input v-on:keyup.enter="submit">
+<!-- also works for shorthand -->
+<input @keyup.enter="submit">
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var veg2 = new Vue({
+
+	el : "#veg2",
+
+
+	data : {
+			name : "vue.js"
+		},
+
+	methods : {
+		say : function(message){
+			alert( message  );
+			
+		},
+		warn : function(message, event){
+			if (event) event.preventDefault()
+				alert(message);
+		},
+		submit : function(){
+			alert('submit');
+		}
+	}
+	
+})
+
+</script>
+</body>
+</html>

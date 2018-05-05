@@ -1,0 +1,31 @@
+<body>
+	<canvas id="my_canvas"></canvas>
+
+<script>
+
+var canvas = null;
+var img = null;
+var context = null
+
+setup = function(){
+
+canvas = document.getElementById("my_canvas");
+context = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+img = new Image();
+img.onLoad = onImageLoad;
+img.src="file:///home/likewise-open/ZOHOCORP/gokulraj-0835/Desktop/pp.jpg";
+
+}
+
+onImageLoad = function(){
+	console.log("Image!!");
+context.drawImage(img,192,192);
+}
+
+setup();
+
+</script>
+</body>

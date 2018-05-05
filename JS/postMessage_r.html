@@ -1,0 +1,13 @@
+<script>
+
+window.addEventListener('message',function(event) {
+    console.log(event.origin);
+	//if(event.origin !== 'http://172.21.200.182:8000/') return;
+	console.log('message received:  ' + event.data );
+
+	event.source.postMessage('Reply Message !',event.origin);
+
+
+},false);
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="component" class="container" >
+      <input type="text" v-model="parentMsg" >
+
+      <span>{{ parentMsg }}</span>
+
+        <child :my-message="parentMsg"></child>
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var data = { counter: 0 }
+
+Vue.component('child', {
+  // declare the props
+  props: ['myMessage'],
+  // just like data, the prop can be used inside templates
+  // and is also made available in the vm as this.message
+  template: '<span>{{ myMessage }}</span>'
+})
+
+new Vue({
+
+    el : '#component',
+    data : {
+        parentMsg : 'hello child'
+    }
+
+})
+</script>
+
+</body>
+</html>

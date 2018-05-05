@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="vif">
+	<template v-if="template">
+		<p>Gokul Raj</p>
+		<h1>template vif</h1>
+
+	</template>
+	
+	<h1 v-show="ok">v-show</h1>
+
+	<h1 v-if="ok">Vue VIF</h1>
+	<h1 v-else="ok">JS</h1>
+
+	<div v-if="type === 'A'">
+		A
+	</div>
+	<div v-else-if="type === 'B'">
+		B
+	</div>
+	<div v-else-if="type === 'C'">
+		C
+	</div>
+	<div v-else>
+		Not A/B/C
+	</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+
+var vif = new Vue({
+
+	el : "#vif",
+
+	data : {
+		ok : false,
+		template : true,
+		type : 'A'
+	}	
+})
+
+</script>
+</body>
+</html>

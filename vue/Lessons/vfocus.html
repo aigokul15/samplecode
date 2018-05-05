@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+
+<div id="login">
+	<input type="radio" id="mobile" value="mobile" v-model="flow">
+	<label for="mobile">Mobile</label>
+	<input type="radio" id="password" value="password" v-model="flow">
+	<label for="password">Password</label>
+	<div v-if="flow == 'mobile'">
+		<form v-on:submit="checkmobile">
+			<p>
+			Mobile Number<br>
+			<input type="text" v-model="mobile_number" v-focus>
+			</p>
+		</form>
+	</div>
+	<div v-if="flow == 'password'">
+		<form v-on:submit="checkpassword">
+			<p>
+			Password<br>
+			<input type="password" v-model="password" v-focus>
+			</p>
+		</form>
+	</div>
+
+<br><br>
+
+
+<span v-on:dblclick="editTask()">focus</span>
+<input type="text" v-model="newTask" v-focus>
+
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script>
+Vue.directive('focus', {
+    inserted: function (el) {
+		console.log( " inserted " + el );
+        el.focus();
+    },
+    update: function (el) {
+        Vue.nextTick(function() {
+		console.log( " update " + el );
+			
+              el.focus();
+        })
+    }
+})
+
+var demo = new Vue({
+el: '#login',
+data: {
+    flow: "mobile",
+    mobile_number: null,
+    password: null,
+	newTask : ''
+},
+methods: {
+    checkmobile: function(e) {
+        e.preventDefault();
+        this.flow = "password"
+    },
+    checkpassword: function(e) {
+        e.preventDefault();
+    },
+	editTask : function(){
+		console.log( 'edit');
+		this.newTask = "updated";
+	}
+}
+});
+</script>
+</body>
+</html>

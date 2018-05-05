@@ -1,0 +1,17 @@
+<div class="navbar-header" id="vmenu" class="container" >
+
+		<ul class="nav navbar-nav">
+			<li v-for="item in menu" v-bind:class="{{ active : isActive }}" > 
+				<a  href="#">{{item}}</a>
+			</li>
+		</ul>
+
+	</div> 
+    <nav class="navbar navbar-inverse navbar-static-top">
+<div class="container-fluid">
+
+	
+
+	<div v-bind:class="{{ active : isActive }}" >test</div>
+</div>
+</nav>

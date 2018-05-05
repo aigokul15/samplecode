@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div id="app3" class="container" >
+
+<p v-if="seen">Now you see me</p>
+
+<pre>{{ $data | json }}</pre>
+	
+</div> 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+<script >
+
+var app3=new Vue({
+
+	el : "#app3",
+	
+	data : {
+			seen : true
+	}
+});
+ </script>
+</body>
+</html>
